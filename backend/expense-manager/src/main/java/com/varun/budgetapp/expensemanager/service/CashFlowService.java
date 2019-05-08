@@ -42,7 +42,7 @@ public class CashFlowService {
 				return cashflow.getAmount().negate();
 			}
 				})
-				.reduce((x, y) -> x.add(y)).get();
+				.reduce((x, y) -> x.add(y)).orElseGet(() -> BigDecimal.ZERO);
 
 	}
 
