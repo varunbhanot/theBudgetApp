@@ -32,13 +32,13 @@ public class CashFlowController {
     @Autowired
     private CashFlowService service;
 
-    @PostMapping(name = "/cashflow", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(name = "/cashflow", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,path = "/cashflow")
     public ResponseEntity<CashFlow> addIncome(@RequestBody @Valid CashFlow request) {
         log.info("Adding income : {}", request);
         return new ResponseEntity<CashFlow>(service.addIncome(request), HttpStatus.CREATED);
     }
 
-    @GetMapping(name = "/cashflow/all")
+    @GetMapping(name = "/cashflow/all", path =  "/cashflow/all")
     public ResponseEntity<List<CashFlow>> getAllIncomeByDate(@RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from,
             @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate to) {
         log.info("Getting income entries from : {}  to: {}", from, to);

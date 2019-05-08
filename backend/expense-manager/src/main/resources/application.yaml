@@ -8,4 +8,4 @@ spring:
       use-new-id-generator-mappings: false  
   flyway:
     locations:
-    - classpath:/db/migrations
+    - classpath:/db/migrations  
