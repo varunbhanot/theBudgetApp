@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.varun.budgetapp.expensemanager.domain.CashFlow;
+import com.varun.budgetapp.expensemanager.domain.CashFlow.CashFlowTypeEnum;
 
 /**
  * TestingUtil
@@ -23,13 +24,13 @@ public class TestingUtil {
               .builder()
               .amount(BigDecimal.TEN)
               .entryTime(LocalDateTime.now())
-              .type("INCOME")
+              .type(CashFlowTypeEnum.INCOME)
               .subType("FOOD")
               .build();
     }
 
 
-    public static CashFlow cashFlowByAmountAndType(BigDecimal amount, String type, String subType) {
+    public static CashFlow cashFlowByAmountAndType(BigDecimal amount, CashFlowTypeEnum type, String subType) {
         return CashFlow
               .builder()
               .amount(amount)

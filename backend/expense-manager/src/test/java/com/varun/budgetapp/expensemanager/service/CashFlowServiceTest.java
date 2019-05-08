@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.varun.budgetapp.expensemanager.domain.CashFlow;
+import com.varun.budgetapp.expensemanager.domain.CashFlow.CashFlowTypeEnum;
 import com.varun.budgetapp.expensemanager.repository.CashFlowRepository;
 
 import org.hamcrest.Matchers;
@@ -77,8 +78,8 @@ public class CashFlowServiceTest {
 
     private List<CashFlow> createListOfRecords() {
         List<CashFlow> list = new ArrayList<>();
-        list.add(cashFlowByAmountAndType(new BigDecimal(20),"INCOME","SALARY"));
-        list.add(cashFlowByAmountAndType(new BigDecimal(10),"EXPENSE","FOOD"));
+        list.add(cashFlowByAmountAndType(new BigDecimal(20),CashFlowTypeEnum.INCOME,"SALARY"));
+        list.add(cashFlowByAmountAndType(new BigDecimal(10),CashFlowTypeEnum.EXPENSE,"FOOD"));
         return list;
     }
 

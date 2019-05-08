@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,9 +29,9 @@ import lombok.NoArgsConstructor;
 public class CashFlow {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    @NotBlank
-    private String type;
+    private long id;    
+    @JsonProperty("type")
+    private CashFlowTypeEnum type;
     @Column(name = "sub_type")
     private String subType;
     @NotNull
@@ -38,5 +40,24 @@ public class CashFlow {
     @NotNull
     @Column(name = "entry_time")
     private LocalDateTime entryTime;
+
+
+    public static enum CashFlowTypeEnum{
+        INCOME("Income"),EXPENSE("Expense");
+
+        private String value;
+
+        CashFlowTypeEnum(String value) {
+            this.value = value;
+        }
+
+        /**
+         * @return the value
+         */
+        public String getValue() {
+            return value;
+        }
+
+    }
 
 }

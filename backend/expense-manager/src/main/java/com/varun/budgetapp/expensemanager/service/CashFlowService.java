@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.varun.budgetapp.expensemanager.domain.CashFlow;
+import com.varun.budgetapp.expensemanager.domain.CashFlow.CashFlowTypeEnum;
 import com.varun.budgetapp.expensemanager.repository.CashFlowRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class CashFlowService {
 		return this.retrieveEntryByDate(from, to)
 			    .stream()
 			    .map(cashflow -> {
-			if (cashflow.getType().equalsIgnoreCase("INCOME")) {
+			if (cashflow.getType().equals(CashFlowTypeEnum.INCOME)) {
 				return cashflow.getAmount();
 			} else {
 				return cashflow.getAmount().negate();

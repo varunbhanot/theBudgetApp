@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.varun.budgetapp.expensemanager.domain.CashFlow;
+import com.varun.budgetapp.expensemanager.domain.CashFlow.CashFlowTypeEnum;
 import com.varun.budgetapp.expensemanager.repository.CashFlowRepository;
 
 import org.junit.Test;
@@ -107,7 +108,7 @@ public class CashFlowControllerTest {
     @Test
     public void shouldGetBalance() throws Exception {
         repository.deleteAll();
-        CashFlow request1 = cashFlowByAmountAndType(BigDecimal.valueOf(20L),"INCOME","SALARY");        
+        CashFlow request1 = cashFlowByAmountAndType(BigDecimal.valueOf(20L),CashFlowTypeEnum.INCOME,"SALARY");        
         this
         .mockMvc
         .perform(post("/cashflow")
@@ -115,7 +116,7 @@ public class CashFlowControllerTest {
         .content(asJsonString(request1)))        
         .andExpect(status().isCreated());
 
-        CashFlow request2 = cashFlowByAmountAndType(BigDecimal.valueOf(10L),"EXPENSE","FOOD");         
+        CashFlow request2 = cashFlowByAmountAndType(BigDecimal.valueOf(10L),CashFlowTypeEnum.EXPENSE,"FOOD");         
         this
         .mockMvc
         .perform(post("/cashflow")
