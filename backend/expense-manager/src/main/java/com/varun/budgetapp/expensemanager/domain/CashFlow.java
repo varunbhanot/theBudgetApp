@@ -30,6 +30,7 @@ public class CashFlow {
     private long id;
     @NotBlank
     private String type;
+    @Column(name = "sub_type")
     private String subType;
     @NotNull
     private BigDecimal amount;
