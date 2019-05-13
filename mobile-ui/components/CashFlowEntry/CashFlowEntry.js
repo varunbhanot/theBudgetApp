@@ -1,7 +1,9 @@
 import React from 'react';
 import { View } from "react-native";
 import PropTypes from 'prop-types';
-import { ListItem } from "react-native-elements";
+import { ListItem, Icon } from "react-native-elements";
+
+
 
 const CashFlowEntry = props => {
     return (
@@ -10,7 +12,7 @@ const CashFlowEntry = props => {
           key={props.cashflow.id}
           title={props.cashflow.subType}
           rightTitle={props.cashflow.amount.toString()}
-          leftAvatar={props.cashflow.leftAvatar}
+          leftAvatar={<Icon name="food" type="material-community"  color='#00aced'/>}
           bottomDivider={true}          
           />
       </View>  

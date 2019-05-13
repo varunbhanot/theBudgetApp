@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import { shallow } from 'enzyme';
-import CashFlowEntry from "../CashFlowEntry";
+import CashFlowEntry from "../CashFlowEntry/CashFlowEntry";
 import { ListItem } from "react-native-elements";
 
 

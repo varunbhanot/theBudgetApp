@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-import CashFlowEntry from "../components/CashFlowEntry";
+import CashFlowCard from "../components/CashFlowCard/CashFlowCard";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -21,13 +21,23 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           
-        <Text style={styles.tabBarInfoText}>Hello</Text>        
-        <CashFlowEntry cashflow={{
-            id : 1,
-            subType : 'Salary',
-            amount: 10.10,
+        <Text style={styles.tabBarInfoText}>Hello</Text> 
+        <CashFlowCard cashFlows={
+          [
+            {
+              id : 1,
+              subType : 'Salary',
+              amount: 10.10,
+              leftAvatar: '../xyz.png'
+          },
+          {
+            id : 2,
+            subType : 'Food',
+            amount: 20.10,
             leftAvatar: '../xyz.png'
-        }}/>
+        }
+          ]
+        }/>      
         </ScrollView>
       </View>
     );
