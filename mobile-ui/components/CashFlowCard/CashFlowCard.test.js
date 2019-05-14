@@ -1,7 +1,7 @@
 import 'react-native';
 import React from 'react';
 import { shallow } from 'enzyme';
-import CashFlowCard from "../CashFlowCard/CashFlowCard";
+import CashFlowCard from "./CashFlowCard";
 import CashFlowEntry from "../CashFlowEntry/CashFlowEntry";
 import { Card } from "react-native-elements";
 
@@ -22,6 +22,7 @@ describe('<CashFlowCard />', () => {
                 {
                     id : 1,
                     subType : 'Salary',
+                    type: 'INCOME',
                     amount: 10.10,
                     leftAvatar: '../xyz.png'
                 }
