@@ -11,7 +11,7 @@ const CashFlowEntry = props => {
           <ListItem
           key={props.cashflow.id}
           title={props.cashflow.subType}
-          rightTitle={props.cashflow.amount.toString()}
+          rightTitle={Math.round(props.cashflow.amount).toString()}
           leftAvatar={<Icon name="food" type="material-community"  color='#00aced'/>}
           bottomDivider={true}          
           />

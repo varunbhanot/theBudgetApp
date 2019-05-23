@@ -30,7 +30,7 @@ describe('<CashFlowEntry />', () => {
             leftAvatar: '../xyz.png'
         }}/>);
         expect(wrapper.find(ListItem).prop("title")).toEqual("Salary");
-        expect(wrapper.find(ListItem).prop("rightTitle")).toEqual("10.1");
+        expect(wrapper.find(ListItem).prop("rightTitle")).toEqual("10");
     });
 
 

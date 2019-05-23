@@ -25,12 +25,6 @@ const currentDate = ()=>{
     return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear()
 };
 
-/* const renderCashFlowEntry = entry => {
-    return (
-        
-    );
-}; */
-
 CashFlowCard.propTypes = {
     cashFlows: PropTypes.arrayOf(Object)
 };
