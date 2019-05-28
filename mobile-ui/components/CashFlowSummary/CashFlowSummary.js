@@ -10,7 +10,7 @@ const CashFlowSummary = props => {
     let [income, expense] = calcCashFlows(props);
     let balance = income - expense;
     return (
-        <Card wrapperStyle={styles.summaryContainer}>
+        <Card wrapperStyle={styles.summaryContainer} >
             {renderCashFlow("Income", income)}
             {renderCashFlow("Expense", expense)}
             {renderCashFlow("Balance", balance)}

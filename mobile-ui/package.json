@@ -32,6 +32,7 @@
     "babel-preset-expo": "^5.0.0",
     "jest-expo": "^32.0.0",
     "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.3",
     "remote-redux-devtools": "0.5.0"
   },
   "private": true

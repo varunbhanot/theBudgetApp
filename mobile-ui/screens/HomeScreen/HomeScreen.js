@@ -42,7 +42,6 @@ function mapStateToProps(state) {
     return {
       cashFlows : state.cashflows.cashFlows
     }
-  
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
