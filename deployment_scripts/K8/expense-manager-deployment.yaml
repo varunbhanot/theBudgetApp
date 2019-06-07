@@ -1,0 +1,59 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: expense-manager-service
+spec:
+  selector:
+    app: expense-manager-service
+  ports:
+  - protocol: TCP
+    port: 8080
+    nodePort: 30083
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expense-manager-service
+spec:
+  selector:
+      matchLabels:
+        app: expense-manager-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: expense-manager-service
+    spec:
+      containers:
+        - name: expense-manager-service
+          image: expense-manager-service:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+          - name: db_url
+            valueFrom:
+              configMapKeyRef:
+                name: expense-manager
+                key: db_url
+          - name: db_name  
+            valueFrom:
+              configMapKeyRef:
+                name: expense-manager
+                key: db_name
+          - name: db_user  
+            valueFrom:
+              configMapKeyRef:
+                name: expense-manager
+                key: db_user
+          - name: db_password  
+            valueFrom:
+              secretKeyRef:
+                name: expense-manager
+                key: db_password
+
+          
+        
+
+        
