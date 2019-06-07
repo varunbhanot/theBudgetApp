@@ -10,7 +10,7 @@
 
 * UI:
   * -[ ] Budget Management Screen
-    * -[ ] Screen
+    * -[x] Screen
     * -[ ] UX
   * -[ ] Statistics Screen
     * -[ ] Screen
