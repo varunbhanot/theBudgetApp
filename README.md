@@ -6,6 +6,29 @@
 * Backend:
   * -[x] Expense Manager Service
   * -[ ] Statistics Service
+  * -[ ] Automated Expense Calc Servicee
+
+* UI:
+  * -[ ] Budget Management Screen
+    * -[ ] Screen
+    * -[ ] UX
+  * -[ ] Statistics Screen
+    * -[ ] Screen
+    * -[ ] UX
+  * -[ ] Goals Management 
+    * -[ ] Screen
+    * -[ ] UX
+  * -[ ] Investment Management
+    * -[ ] Screen
+    * -[ ] UX
+* Deployment:
+  * -[x] Expense Manager Service
+  * -[x] Expense Manager DB
+  * -[ ] Statistics Service
   * -[ ] Automated Expense Calc Service
+  * -[ ] CD Pipeline
+ 
+
+
 
           
